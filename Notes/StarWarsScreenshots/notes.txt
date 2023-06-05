@@ -1,0 +1,15 @@
+Star Wars - 
+Loading Screen - Image, Loading Bar, Repeating text animation
+
+User Info at the top with Avatar box.
+
+Scrollview of various panels:
+Free Rewards -> Timeout collectable currency and cards
+Activity -> Missions, Trading, Workbench, Lock on (animated randomiser)
+Recently Collected
+Store
+Special Events
+
+Each panel leads to a screen
+
+Need a nice background image (star wars uses star destroyers well)
