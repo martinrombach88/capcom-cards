@@ -1,5 +1,0 @@
-For Notion:
-
-npx create-expo-app myApp
-
-npx expo start

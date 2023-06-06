@@ -1,0 +1,6 @@
+
+
+create: npx create-expo-app myApp
+
+run: npx expo start
+
