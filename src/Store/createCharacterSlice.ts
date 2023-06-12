@@ -418,7 +418,7 @@ export const charData: CardType[] = [
 		name: "Strider",
 		series: "Strider",
 		description:
-			"A spy possessing superhuman abilities and extreme combat training from the government. He hunts Grandmaster Meio, a powerful military leader who conquers the world.",
+			"A spy possessing superhuman abilities and extreme combat training from the government. He hunts Grandmaster Meio, a powerful military leader who has conquered the world.",
 		firstAppeared: "Strider",
 		cameos: "Playable in Marvel vs Capcom 2",
 	},
@@ -427,7 +427,7 @@ export const charData: CardType[] = [
 		name: "Marionette",
 		series: "darkstalkers",
 		description:
-			"A manipulative creature that possesses darkstalkers and other creatures to fight. Once an enemy is defeated, marionette leaves the victor in stone, before taking over the new defeated creature.",
+			"A manipulative creature that possesses darkstalkers and other creatures to fight. Once an enemy is defeated, marionette leaves the victor in stone, before taking over the defeated creature.",
 		firstAppeared: "Vampire Savior",
 		cameos: "On a card in Card Fighter DS",
 	},

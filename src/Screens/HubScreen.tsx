@@ -1,4 +1,5 @@
 import { Dimensions } from "react-native";
+import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { Button, Div, Image, Text } from "react-native-magnus";
 import Backgrounds from "../Assets/Backgrounds";
@@ -6,6 +7,16 @@ import Avatars from "../Assets/Avatars";
 import Placeholders from "../Assets/Placeholders";
 
 const HubScreen = () => {
+	const [phState, setPhstate] = useState(Placeholders.CammyPH);
+
+	const swapCard = () => {
+		if (phState != Placeholders.CammyGPH) {
+			setPhstate(Placeholders.CammyGPH);
+		} else if (phState != Placeholders.CammyPH) {
+			setPhstate(Placeholders.CammyPH);
+		}
+	};
+
 	return (
 		<Div w={Dimensions.get("window").width} position="relative">
 			<Div
@@ -44,12 +55,11 @@ const HubScreen = () => {
 				<Div bg="white" my="md">
 					<Text fontSize="2xl">Latest Card</Text>
 				</Div>
-				<Image
-					resizeMode="contain"
-					source={Placeholders.CammyPH}
-					h={200}
-					w={200}
-				/>
+				<Div>
+					<Button onPress={swapCard}>
+						<Image resizeMode="contain" source={phState} h={200} w={200} />
+					</Button>
+				</Div>
 			</Div>
 
 			<Div
