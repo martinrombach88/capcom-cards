@@ -5,8 +5,13 @@ import { Button, Div, Image, Text } from "react-native-magnus";
 import Backgrounds from "../Assets/Backgrounds";
 import Avatars from "../Assets/Avatars";
 import Placeholders from "../Assets/Placeholders";
+import { Props } from "../Navigation/Navigators/NavParams";
+import { UserType } from "../Store/createUserSlice";
 
-const HubScreen = () => {
+const HubScreen = ({ route }: Props) => {
+	const user = route.params;
+	console.log("route params", route.params);
+
 	const [phState, setPhstate] = useState(Placeholders.CammyPH);
 
 	const swapCard = () => {

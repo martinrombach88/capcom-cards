@@ -1,0 +1,19 @@
+1. Articulate the problem  - explain in one or two sentences what the problem is.
+Navigation hook doesn't go to route.
+2. Brainstorm pseudo here:
+Phil's structure:
+components call 'AppNavProps' gives 
+navigate a list of routes with their param types and the chosen route.
+
+Phil's components make calls themselves. 
+They usually take the user object from the auth store.
+They only pass ids to child components.
+
+
+3. What component are you working in? What other components affect your problem?
+StackNav Hook, All Screens
+4. What have you tried? What was wrong with these solutions?
+5. If you tried a component, what alternatives are there?
+6. Make a question for google or chat gpt:
+
+7. When you solve it, make some notes:
