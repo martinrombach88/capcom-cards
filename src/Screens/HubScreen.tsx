@@ -9,7 +9,7 @@ import { Props } from "../Navigation/Navigators/NavParams";
 import { UserType } from "../Store/createUserSlice";
 
 const HubScreen = ({ route }: Props) => {
-	const user = route.params;
+	const user = route.params?.payload;
 	console.log("route params", route.params);
 
 	const [phState, setPhstate] = useState(Placeholders.CammyPH);
@@ -35,10 +35,12 @@ const HubScreen = ({ route }: Props) => {
 				px="xl">
 				<Div flexDir="row">
 					<Image w={40} h={40} source={Avatars.Arthur} />
-					<Text fontSize="lg">user: gng225</Text>
+					<Text fontSize="lg">
+						user: {user?.username ? user?.username : "no user"}
+					</Text>
 				</Div>
 
-				<Text>currency: 40000</Text>
+				<Text>currency:{user?.currency ? user?.currency : 0}</Text>
 			</Div>
 			<Div
 				flexDir="row"

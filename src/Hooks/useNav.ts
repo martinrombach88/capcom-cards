@@ -6,7 +6,6 @@ const useNav = () => {
 	const navigation = useNavigation<AppNavProps>();
 	const navTo = (routeName: any, params?: any) => {
 		return () => {
-			// console.log("nav pressed");
 			navigation.navigate(routeName, params);
 		};
 	};

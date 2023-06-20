@@ -7,3 +7,4 @@ Libraries:
 
 React stack navigator
 React hook form
+react-native-toast-message

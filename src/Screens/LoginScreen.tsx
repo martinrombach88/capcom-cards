@@ -1,11 +1,13 @@
 import { Dimensions } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { Button, Div, Image, Input, Text } from "react-native-magnus";
+import { Button, Div } from "react-native-magnus";
+import { useForm } from "react-hook-form";
+
 import Backgrounds from "../Assets/Backgrounds";
-import Logos from "../Assets/Logos";
+import { FormInput } from "../Components";
 import useNav from "../Hooks/useNav";
 import { UserType } from "../Store/createUserSlice";
-import { useForm } from "react-hook-form";
+import { createUserFormatter, showToastMessage } from "../Helpers/Helpers";
+import { SCREENS } from "../Navigation/Routes";
 
 const LoginScreen = () => {
 	const testUser: UserType = {
@@ -23,32 +25,46 @@ const LoginScreen = () => {
 
 	const { navTo } = useNav();
 	const {
-		register,
+		control,
 		handleSubmit,
-		watch,
 		formState: { isValid, errors },
+		getValues,
 	} = useForm();
+
+	const submitUser = () => {
+		console.log("submit");
+		if (isValid) {
+			console.log("valid");
+			const { username, password } = getValues();
+			const payload = createUserFormatter(username, password);
+			//firebase logic goes here, test for now
+			navTo(SCREENS.HUB_SCREEN, { payload })();
+		} else {
+			showToastMessage("Invalid", "Please enter a username and password");
+		}
+	};
 
 	return (
 		<Div
 			w={Dimensions.get("window").width}
 			bgImg={Backgrounds.bg2}
 			flex={1}
-			justifyContent="center"
+			pt={200}
 			alignItems="center">
 			{/* <Image h="100%" w="100%" source={Backgrounds.bg2} zIndex={1} /> */}
 
-			<Div justifyContent="space-between">
-				<Input
-					// name="username"
-					placeholder="enter username"
-					w={150}
-				/>
-				<Input
-					// name="username"
-					placeholder="enter password"
-					w={150}
-				/>
+			<Div alignItems="center">
+				<Div py="md">
+					<FormInput control={control} name="username" placeholder="Username" />
+				</Div>
+				<Div py="md">
+					<FormInput control={control} name="password" placeholder="Password" />
+				</Div>
+
+				{/* Add: password confirm */}
+				<Div py="md">
+					<Button onPress={submitUser}>Submit</Button>
+				</Div>
 			</Div>
 		</Div>
 	);
