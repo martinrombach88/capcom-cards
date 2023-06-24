@@ -6,7 +6,7 @@ import Backgrounds from "../Assets/Backgrounds";
 import Avatars from "../Assets/Avatars";
 import Placeholders from "../Assets/Placeholders";
 import { Props } from "../Navigation/Navigators/NavParams";
-import { UserType } from "../Store/createUserSlice";
+import { UserType } from "../Types/User";
 
 const HubScreen = ({ route }: Props) => {
 	const user = route.params?.payload;

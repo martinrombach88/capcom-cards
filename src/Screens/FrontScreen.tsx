@@ -6,7 +6,8 @@ import Logos from "../Assets/Logos";
 import { useNavigation } from "@react-navigation/native";
 import useNav from "../Hooks/useNav";
 import { SCREENS } from "../Navigation/Routes";
-import { UserType } from "../Store/createUserSlice";
+import { UserType } from "../Types/User";
+import { createTestCard } from "../Services/CardsService";
 const FrontScreen = () => {
 	// console.log("i am on front screen");
 	const { navTo } = useNav();
@@ -40,6 +41,11 @@ const FrontScreen = () => {
 				<Button bg="white" onPress={navTo(SCREENS.NEW_USER_SCREEN)}>
 					<Text color="black" fontWeight="600">
 						I'm New
+					</Text>
+				</Button>
+				<Button onPress={createTestCard} bg="white">
+					<Text color="black" fontWeight="600">
+						Create Arthur Card
 					</Text>
 				</Button>
 			</Div>

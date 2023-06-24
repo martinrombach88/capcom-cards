@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import Backgrounds from "../Assets/Backgrounds";
 import { FormInput } from "../Components";
 import useNav from "../Hooks/useNav";
-import { UserType } from "../Store/createUserSlice";
+import { UserType } from "../Types/User";
 import { createUserFormatter, showToastMessage } from "../Helpers/Helpers";
 import { SCREENS } from "../Navigation/Routes";
 
