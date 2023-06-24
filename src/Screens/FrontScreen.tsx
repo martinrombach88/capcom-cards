@@ -7,7 +7,9 @@ import { useNavigation } from "@react-navigation/native";
 import useNav from "../Hooks/useNav";
 import { SCREENS } from "../Navigation/Routes";
 import { UserType } from "../Types/User";
-import { createTestCard } from "../Services/CardsService";
+import { createTestCard, createCardCollection } from "../Services/CardsService";
+import { charData } from "../Assets/CardData/Cards";
+
 const FrontScreen = () => {
 	// console.log("i am on front screen");
 	const { navTo } = useNav();
@@ -43,9 +45,16 @@ const FrontScreen = () => {
 						I'm New
 					</Text>
 				</Button>
-				<Button onPress={createTestCard} bg="white">
+				{/* <Button onPress={createTestCard} bg="white">
 					<Text color="black" fontWeight="600">
 						Create Arthur Card
+					</Text>
+				</Button> */}
+				<Button
+					onPress={() => createCardCollection(charData, "capcom-cards")}
+					bg="white">
+					<Text color="black" fontWeight="600">
+						Create Card Collection
 					</Text>
 				</Button>
 			</Div>

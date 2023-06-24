@@ -13,7 +13,14 @@ export const createTestCard = () => {
 	};
 
 	axios.post(
-		"https://capcom-cards-default-rtdb.asia-southeast1.firebasedatabase.app/cards.json",
+		"https://capcom-cards-default-rtdb.asia-southeast1.firebasedatabase.app/test-collection.json",
 		arthur
+	);
+};
+
+export const createCardCollection = (cards: any, collectionName: string) => {
+	axios.post(
+		`https://capcom-cards-default-rtdb.asia-southeast1.firebasedatabase.app/${collectionName}.json`,
+		cards
 	);
 };
